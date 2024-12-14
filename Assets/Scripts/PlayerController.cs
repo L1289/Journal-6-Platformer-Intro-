@@ -70,7 +70,14 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return true;
+        if (velocity.y != 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     public FacingDirection GetFacingDirection()
