@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        IsGrounded();
+        Debug.Log(IsGrounded());
         IsWalking();
         // The input from the player needs to be determined and
         // then passed in the to the MovementUpdate which should
