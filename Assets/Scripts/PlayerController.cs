@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
             velocity.x += acceleration * playerInput.x * Time.deltaTime;
             velocity.x = Mathf.Clamp(velocity.x, -negativeSpeedLimit, postiveSpeedLimit);
         }
+        
+        else
+        {
+            velocity.x = 0;
+        }
 
         if (velocity.x > 0)
         {
@@ -54,6 +59,7 @@ public class PlayerController : MonoBehaviour
         {
             direction = FacingDirection.left;
         }
+
 
     }
 
