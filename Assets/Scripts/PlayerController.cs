@@ -32,7 +32,9 @@ public class PlayerController : MonoBehaviour
         // The input from the player needs to be determined and
         // then passed in the to the MovementUpdate which should
         // manage the actual movement of the character.
+
         Vector2 playerInput = new Vector2();
+        //Gets inputs from keybinds A and D 
         playerInput.x = Input.GetAxisRaw("Horizontal");
         MovementUpdate(playerInput);
 
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
             velocity.x = 0;
         }
 
+        //changes the players direction they are facing based on the velocity they are traveling at and how much.
         if (velocity.x > 0)
         {
             direction = FacingDirection.right;
@@ -67,10 +70,12 @@ public class PlayerController : MonoBehaviour
 
     public bool IsWalking()
     {
+        //Checks if their is velocity happing on the x axis if so then it will return true that the player is walking switching the animation being played from idle to walking
         if (velocity.x != 0)
         {
             return true;
         }
+        //otherwise it will just return false and keep playing idle
         else
         {
             return false;
@@ -78,10 +83,12 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
+        //if the player falls or jumps and the velocity on the y axis changes and is not 0 then the player will not be grounded as it will be returns false
         if (velocity.y != 0)
         {
             return false;
         }
+        //Otherwise the player will be grounded as it will be returned true as long as the y is zero.
         else
         {
             return true;
