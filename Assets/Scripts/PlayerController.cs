@@ -46,6 +46,14 @@ public class PlayerController : MonoBehaviour
             velocity.x = Mathf.Clamp(velocity.x, -negativeSpeedLimit, postiveSpeedLimit);
         }
 
+        if (velocity.x > 0)
+        {
+            direction = FacingDirection.right;
+        }
+        else if (velocity.x < 0)
+        {
+            direction = FacingDirection.left;
+        }
 
     }
 
